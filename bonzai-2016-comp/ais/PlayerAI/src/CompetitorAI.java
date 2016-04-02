@@ -4,7 +4,7 @@ import bonzai.util.*;
 import lazers.*;
 import lazers.api.*;
 
-@Agent(name = "PlayerAI")
+@Agent(name = "Make_MTU_Great_Again")
 public class CompetitorAI extends AI {
 	public Action action(Turn turn) {
 		Team myTeam 		= turn.getMyTeam();
@@ -16,6 +16,11 @@ public class CompetitorAI extends AI {
 		//Add all repeaters and targets to this list
 		interest.addAll(turn.getAllRepeaters());
 		interest.addAll(turn.getAllTargets());
+		
+		ShoutAction shout = new ShoutAction("The wall just got taller");
+		
+		
+	
 		
 		//Remove anything that we can't hit from our emitter
 		interest = Utility.retain(interest, new CanHitPredicate(myEmitter));
